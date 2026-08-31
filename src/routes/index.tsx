@@ -177,8 +177,12 @@ function LandingPage() {
 
       {/* 3 — O QUE RECEBE + COMO FUNCIONA */}
       <Section>
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="relative mx-auto w-full max-w-[340px]">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="relative mx-auto w-full max-w-[330px]">
+            <span
+              className="absolute -inset-6 -z-10 rounded-[2rem] bg-secondary"
+              aria-hidden
+            />
             <img
               src={CONFIG.PRODUCT_MOCKUP}
               alt="O que está dentro do guia Silicone em Pó"
@@ -190,48 +194,55 @@ function LandingPage() {
           </div>
           <div>
             <Eyebrow>O que você recebe</Eyebrow>
-            <h2 className="mt-3 font-display text-[1.75rem] font-bold leading-tight sm:text-4xl">
+            <h2 className="mt-3 font-display text-[1.9rem] font-semibold leading-[1.1] sm:text-[2.6rem]">
               Tudo o que precisa para começar, num só lugar.
             </h2>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {INCLUDED.map((i) => (
-                <li key={i} className="flex items-start gap-3 text-[0.95rem] font-medium">
-                  <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-wine text-primary-foreground">
-                    <Check className="size-3" />
-                  </span>
-                  {i}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-7 max-w-sm">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {INCLUDED.map((i, idx) => {
+                const Icon = INCLUDED_ICONS[idx % INCLUDED_ICONS.length]!;
+                return (
+                  <article
+                    key={i}
+                    className="card-premium flex items-center gap-3 p-4 transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-secondary text-rose-burnt">
+                      <Icon className="size-4" />
+                    </span>
+                    <h3 className="font-sans text-[0.92rem] font-semibold leading-snug tracking-normal text-ink">
+                      {i}
+                    </h3>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="mt-9 max-w-sm">
               <Cta label={CTA.offer} location="o-que-recebe" />
             </div>
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-3">
-          {STEPS.map((s) => (
-            <article key={s.n} className="card-premium p-6">
-              <span className="font-display text-4xl text-gold">{s.n}</span>
-              <h3 className="mt-3 text-lg font-bold uppercase tracking-wide text-wine">{s.t}</h3>
-              <div className="rule-gold my-3 w-12" />
-              <p className="text-sm leading-relaxed text-muted-foreground">{s.d}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {BENEFITS.map((b) => (
-            <div
-              key={b}
-              className="rounded-xl border border-border bg-card p-5 text-[0.95rem] font-semibold transition-transform duration-200 hover:-translate-y-1"
-            >
-              <span className="mb-3 block h-0.5 w-8 bg-gold" aria-hidden />
-              {b}
-            </div>
-          ))}
+        <div className="mt-20 sm:mt-28">
+          <div className="mx-auto max-w-xl text-center">
+            <Eyebrow>Como funciona</Eyebrow>
+            <h2 className="mt-3 font-display text-[1.75rem] font-semibold leading-[1.12] sm:text-[2.4rem]">
+              Organize, prepare e mantenha.
+            </h2>
+          </div>
+          <div className="step-line mt-12 grid gap-8 sm:grid-cols-3 sm:gap-6">
+            {STEPS.map((s) => (
+              <article key={s.n} className="relative text-center sm:text-left">
+                <span className="grid size-14 place-items-center rounded-full border border-border bg-card font-display text-xl font-semibold text-rose-burnt shadow-[var(--shadow-soft)] max-sm:mx-auto">
+                  {s.n}
+                </span>
+                <h3 className="mt-5 font-display text-xl font-semibold text-wine">{s.t}</h3>
+                <div className="rule-gold my-3 w-12 max-sm:mx-auto" />
+                <p className="text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </Section>
+
 
       {/* 4 — OFERTA + URGÊNCIA */}
       <Section id="oferta" className="border-y border-border bg-secondary">
