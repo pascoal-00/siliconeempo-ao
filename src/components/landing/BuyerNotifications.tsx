@@ -38,7 +38,7 @@ export function BuyerNotifications({ notifications = buyerNotifications }: Props
 
   return (
     <div className="pointer-events-none fixed bottom-[5.5rem] left-3 z-40 sm:bottom-6 sm:left-6">
-      <div className="animate-notif pointer-events-auto flex max-w-[19rem] items-center gap-3 rounded-2xl border border-border bg-card/95 py-2.5 pl-3 pr-9 shadow-[var(--shadow-soft)] backdrop-blur">
+      <div className="animate-notif pointer-events-auto relative flex max-w-[19rem] items-center gap-3 rounded-2xl border border-border bg-card/95 py-2.5 pl-3 pr-9 shadow-[var(--shadow-soft)] backdrop-blur">
         <span className="grid size-9 shrink-0 place-items-center rounded-full surface-wine">
           <ShoppingBag className="size-4" />
         </span>
