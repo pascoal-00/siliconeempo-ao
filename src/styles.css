@@ -100,7 +100,13 @@
   h3,
   blockquote {
     font-family: var(--font-display);
-    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 30, "WONK" 1;
+    letter-spacing: -0.02em;
+  }
+
+  p,
+  li {
+    letter-spacing: 0.004em;
   }
 }
 
@@ -243,3 +249,26 @@
   mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
 }
 
+
+
+@utility frame-collected {
+  border-radius: 1.25rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  outline: 1px solid oklch(0.9 0.02 68 / 0.6);
+  outline-offset: 6px;
+}
+
+@utility step-line {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2.1rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent);
+  }
+}
