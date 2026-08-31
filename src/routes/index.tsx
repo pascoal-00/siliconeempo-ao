@@ -58,7 +58,7 @@ function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`px-5 py-14 sm:py-18 ${className}`}>
+    <section id={id} className={`px-5 py-20 sm:py-28 ${className}`}>
       <div className="mx-auto w-full max-w-[1120px]">{children}</div>
     </section>
   );
@@ -87,7 +87,7 @@ function LandingPage() {
   return (
     <main className="bg-background pb-24 sm:pb-0">
       {/* 1 — VSL NO TOPO (REEL) + OFERTA */}
-      <section className="px-5 pb-12 pt-8 sm:pb-16 sm:pt-12">
+      <section className="px-5 pb-16 pt-10 sm:pb-24 sm:pt-16">
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="animate-rise order-1 lg:order-none">
             <VslPlayer reel />
@@ -97,7 +97,7 @@ function LandingPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-wine/20 px-3 py-1.5 eyebrow text-wine">
               <Sparkles className="size-3.5" /> Método feminino • Acesso digital
             </span>
-            <h1 className="mt-5 font-display text-[2.05rem] font-bold leading-[1.08] text-ink sm:text-5xl">
+            <h1 className="mt-5 font-display text-[2.1rem] font-semibold leading-[1.06] text-ink sm:text-[3.35rem]">
               O método simples para conquistar um{" "}
               <em className="not-italic text-wine">bumbum e ancas mais definidos</em>
             </h1>
@@ -133,7 +133,7 @@ function LandingPage() {
       <Section id="provas" className="border-y border-border bg-secondary">
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>Provas reais</Eyebrow>
-          <h2 className="mt-3 font-display text-[1.75rem] font-bold leading-tight sm:text-4xl">
+          <h2 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] sm:text-[2.5rem]">
             Mensagens e resultados de quem já começou.
           </h2>
           <p className="mt-3 text-sm text-muted-foreground">
@@ -141,9 +141,9 @@ function LandingPage() {
           </p>
         </div>
 
-        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-9 sm:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
-            <figure key={i} className="card-premium overflow-hidden p-3">
+            <figure key={i} className="frame-collected overflow-hidden p-3.5">
               <img
                 src={t.src}
                 alt={`Depoimento de cliente em ${t.city}`}
@@ -165,12 +165,12 @@ function LandingPage() {
           ))}
         </div>
 
-        <div className="mt-12">
-          <p className="mb-5 text-center eyebrow text-rose-burnt">Antes e depois</p>
+        <div className="mt-20">
+          <p className="mb-6 text-center eyebrow text-rose-burnt">Antes e depois</p>
           <BeforeAfterMarquee />
         </div>
 
-        <div className="mx-auto mt-9 max-w-sm">
+        <div className="mx-auto mt-14 max-w-sm">
           <Cta label={CTA.decision} location="provas" />
         </div>
       </Section>
@@ -265,7 +265,7 @@ function LandingPage() {
             ))}
           </div>
 
-          <h2 className="mt-9 font-display text-[1.8rem] font-bold sm:text-4xl">
+          <h2 className="mt-9 font-display text-[1.85rem] font-semibold sm:text-[2.5rem]">
             Hoje você pode começar por apenas
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -291,7 +291,7 @@ function LandingPage() {
         <div className="mx-auto max-w-[760px]">
           <div className="text-center">
             <Eyebrow>Perguntas frequentes</Eyebrow>
-            <h2 className="mt-3 font-display text-[1.7rem] font-bold leading-tight sm:text-4xl">
+            <h2 className="mt-3 font-display text-[1.8rem] font-semibold leading-[1.12] sm:text-[2.4rem]">
               Antes de decidir, talvez esteja a pensar…
             </h2>
           </div>
