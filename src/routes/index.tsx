@@ -1,13 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Check, ChevronDown, Eye, Flame, Sparkles, Star } from "lucide-react";
-import { CONFIG, CTA, BENEFITS, FAQ, INCLUDED, STEPS, TESTIMONIALS } from "@/config/landing";
+import {
+  BookOpen,
+  ChefHat,
+  ChevronDown,
+  ClipboardCheck,
+  Eye,
+  Flame,
+  ListChecks,
+  Salad,
+  Smartphone,
+  Sparkles,
+  Star,
+} from "lucide-react";
+import { CONFIG, CTA, FAQ, INCLUDED, STEPS, TESTIMONIALS } from "@/config/landing";
 import { Cta, TrustMicrocopy } from "@/components/landing/Cta";
 import { VslPlayer } from "@/components/landing/VslPlayer";
 import { BeforeAfterMarquee } from "@/components/landing/BeforeAfterMarquee";
 import { Countdown } from "@/components/landing/Countdown";
 import { BuyerNotifications } from "@/components/landing/BuyerNotifications";
 import { track } from "@/lib/tracking";
+
+const INCLUDED_ICONS = [ClipboardCheck, ChefHat, Salad, ListChecks, BookOpen, Sparkles, Smartphone];
+
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
