@@ -33,8 +33,8 @@ export function BuyerNotifications({ notifications = buyerNotifications }: Props
     return () => window.clearTimeout(timer);
   }, [dismissed, notifications.length]);
 
-  if (dismissed || !visible || notifications.length === 0) return null;
   const n = notifications[index];
+  if (dismissed || !visible || !n) return null;
 
   return (
     <div className="pointer-events-none fixed bottom-[5.5rem] left-3 z-40 sm:bottom-6 sm:left-6">
