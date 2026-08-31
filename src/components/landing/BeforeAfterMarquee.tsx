@@ -10,13 +10,13 @@ export function BeforeAfterMarquee() {
         {items.map((img, i) => (
           <figure
             key={i}
-            className="w-[240px] shrink-0 overflow-hidden rounded-2xl border border-border bg-card sm:w-[300px]"
+            className="w-[240px] shrink-0 overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-[var(--shadow-soft)] sm:w-[300px]"
           >
             <img
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              className="aspect-[3/4] w-full bg-secondary object-cover"
+              className="aspect-[3/4] w-full rounded-xl bg-secondary object-cover"
             />
           </figure>
         ))}
