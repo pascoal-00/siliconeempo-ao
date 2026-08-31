@@ -3,7 +3,7 @@ import { Play, Volume2 } from "lucide-react";
 import { CONFIG } from "@/config/landing";
 import { track } from "@/lib/tracking";
 
-export function VslPlayer() {
+export function VslPlayer({ reel = false }: { reel?: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
   const marks = useRef({ 25: false, 50: false, 75: false });
@@ -30,7 +30,11 @@ export function VslPlayer() {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-wine-deep shadow-[var(--shadow-soft)]">
+    <div
+      className={`relative mx-auto overflow-hidden rounded-[1.75rem] border border-border bg-ink shadow-[var(--shadow-soft)] ${
+        reel ? "w-full max-w-[360px]" : "w-full"
+      }`}
+    >
       <video
         ref={ref}
         src={CONFIG.VSL_URL}
@@ -38,18 +42,18 @@ export function VslPlayer() {
         controls={started}
         preload="metadata"
         onTimeUpdate={onTimeUpdate}
-        className="aspect-video h-auto w-full bg-wine-deep object-cover"
+        className={`h-auto w-full bg-ink object-cover ${reel ? "aspect-[9/16]" : "aspect-video"}`}
       />
       {!started && (
         <button
           onClick={play}
           aria-label="Assistir ao vídeo"
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-wine-deep/55 transition-colors hover:bg-wine-deep/45"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-ink/40 transition-colors hover:bg-ink/30"
         >
-          <span className="grid size-16 place-items-center rounded-full bg-background/95 shadow-lg sm:size-20">
+          <span className="grid size-16 place-items-center rounded-full bg-card shadow-lg sm:size-20">
             <Play className="ml-1 size-7 fill-current text-wine sm:size-9" />
           </span>
-          <span className="eyebrow flex items-center gap-1.5 text-gold">
+          <span className="eyebrow flex items-center gap-1.5 text-background">
             <Volume2 className="size-3.5" /> Toque para assistir com som
           </span>
         </button>
