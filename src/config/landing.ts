@@ -86,7 +86,6 @@ export const INCLUDED = [
   "Dicas de alimentação",
   "Orientações para organizar a rotina",
   "Método estruturado",
-  "Material digital",
   "Acesso pelo celular",
 ];
 
