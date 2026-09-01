@@ -1,20 +1,43 @@
-import { useRef, useState } from "react";
-import { Play, Volume2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import { CONFIG } from "@/config/landing";
 import { track } from "@/lib/tracking";
 
 export function VslPlayer({ reel = false }: { reel?: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
-  const [started, setStarted] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const marks = useRef({ 25: false, 50: false, 75: false });
+  const trackedPlay = useRef(false);
 
-  const play = () => {
+  useEffect(() => {
     const v = ref.current;
     if (!v) return;
-    v.muted = false;
-    v.play();
-    setStarted(true);
-    track("VSLPlay");
+    v.muted = true;
+    const playPromise = v.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setPlaying(true);
+          if (!trackedPlay.current) {
+            trackedPlay.current = true;
+            track("VSLPlay");
+          }
+        })
+        .catch(() => {
+          // Autoplay bloqueado pelo browser: deixa o vídeo pausado.
+        });
+    }
+  }, []);
+
+  const toggleMute = () => {
+    const v = ref.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+    if (!v.muted && v.paused) {
+      v.play().then(() => setPlaying(true));
+    }
   };
 
   const onTimeUpdate = () => {
@@ -38,26 +61,21 @@ export function VslPlayer({ reel = false }: { reel?: boolean }) {
       <video
         ref={ref}
         src={CONFIG.VSL_URL}
+        autoPlay
         playsInline
-        controls={started}
+        muted={muted}
+        controls={playing}
         preload="metadata"
         onTimeUpdate={onTimeUpdate}
         className={`h-auto w-full bg-ink object-cover ${reel ? "aspect-[9/16]" : "aspect-video"}`}
       />
-      {!started && (
-        <button
-          onClick={play}
-          aria-label="Assistir ao vídeo"
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-ink/40 transition-colors hover:bg-ink/30"
-        >
-          <span className="grid size-16 place-items-center rounded-full bg-card shadow-lg sm:size-20">
-            <Play className="ml-1 size-7 fill-current text-wine sm:size-9" />
-          </span>
-          <span className="eyebrow flex items-center gap-1.5 text-background">
-            <Volume2 className="size-3.5" /> Toque para assistir com som
-          </span>
-        </button>
-      )}
+      <button
+        onClick={toggleMute}
+        aria-label={muted ? "Ativar som" : "Desativar som"}
+        className="absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-black/50 text-background backdrop-blur-sm transition-colors hover:bg-black/60"
+      >
+        {muted ? <VolumeX className="size-5" /> : <Volume2 className="size-5" />}
+      </button>
     </div>
   );
 }

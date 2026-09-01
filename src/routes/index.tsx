@@ -123,8 +123,8 @@ function LandingPage() {
             <span className="badge-tag bg-wine text-primary-foreground">Acesso digital</span>
           </div>
 
-          <div className="mt-10 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="animate-rise text-center lg:text-left">
+          <div className="mt-6 grid items-center gap-8 lg:mt-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+            <div className="animate-rise order-2 text-center lg:order-1 lg:text-left">
               <h1 className="font-display text-[2.15rem] sm:text-[3.4rem]">
                 O método simples para conquistar um{" "}
                 <span className="accent-italic">bumbum e ancas mais definidos</span>
@@ -155,7 +155,7 @@ function LandingPage() {
               </div>
             </div>
 
-            <div className="animate-rise">
+            <div className="animate-rise order-1 lg:order-2">
               <VslPlayer reel />
             </div>
           </div>
