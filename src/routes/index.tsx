@@ -260,7 +260,7 @@ function LandingPage() {
       <section className="surface-price px-5 py-16 sm:py-24">
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="grid grid-cols-2 gap-4">
-            {PREPS.slice(3, 5).map((img, i) => (
+            {BEFORE_AFTER.slice(6, 8).map((img, i) => (
               <img
                 key={i}
                 src={img.src}
