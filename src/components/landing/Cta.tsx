@@ -40,9 +40,14 @@ export function TrustMicrocopy({ tone = "dark" }: { tone?: "dark" | "light" }) {
       }`}
     >
       <Lock className="size-3" /> Pagamento seguro
-      <span aria-hidden>•</span> Acesso digital
-      <span aria-hidden>•</span> Compra simples e rápida
-      <span aria-hidden>•</span> {CONFIG.PRODUCT_PRICE}
+      <br />
+      <span aria-hidden>•</span>
+      <br />
+      Compra simples e rápida
+      <br />
+      <span aria-hidden>•</span>
+      <br />
+      {CONFIG.PRODUCT_PRICE}
     </p>
   );
 }
