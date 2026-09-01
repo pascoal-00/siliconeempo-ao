@@ -4,11 +4,21 @@ import ad1 from "@/assets/antes-depois-1.jpg.asset.json";
 import ad2 from "@/assets/antes-depois-2.jpg.asset.json";
 import ad3 from "@/assets/antes-depois-3.jpg.asset.json";
 import ad4 from "@/assets/antes-depois-4.jpg.asset.json";
+import ad5 from "@/assets/antes-depois-5.jpg.asset.json";
+import ad6 from "@/assets/antes-depois-6.jpg.asset.json";
+import ad7 from "@/assets/antes-depois-7.jpg.asset.json";
+import ad8 from "@/assets/antes-depois-8.jpg.asset.json";
+import prep1 from "@/assets/preparo-1.jpg.asset.json";
+import prep2 from "@/assets/preparo-2.jpg.asset.json";
+import prep3 from "@/assets/preparo-3.jpg.asset.json";
+import prep4 from "@/assets/preparo-4.jpg.asset.json";
+import prep5 from "@/assets/preparo-5.jpg.asset.json";
 import dep1 from "@/assets/depoimento-1.jpg.asset.json";
 import dep2 from "@/assets/depoimento-2.jpg.asset.json";
 import dep3 from "@/assets/depoimento-3.jpg.asset.json";
 import dep4 from "@/assets/depoimento-4.jpg.asset.json";
 import dep5 from "@/assets/depoimento-5.jpg.asset.json";
+
 
 /** Central config — edite tudo aqui. */
 export const CONFIG = {
