@@ -30,52 +30,57 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-magenta: var(--magenta);
+  --color-magenta-deep: var(--magenta-deep);
+  --color-coral: var(--coral);
+  --color-orange: var(--orange);
   --color-wine: var(--wine);
   --color-wine-deep: var(--wine-deep);
-  --color-rose-burnt: var(--rose-burnt);
-  --color-terracotta: var(--terracotta);
-  --color-gold: var(--gold);
   --color-ink: var(--ink);
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Jost", system-ui, sans-serif;
+  --color-blush: var(--blush);
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif-accent: "Instrument Serif", Georgia, serif;
 }
 
 :root {
-  --radius: 0.5rem;
-  /* Base neutra quente (bege / off-white) */
-  --background: oklch(0.968 0.014 74);
-  --foreground: oklch(0.245 0.032 46);
-  --card: oklch(0.995 0.005 80);
-  --card-foreground: oklch(0.245 0.032 46);
-  --popover: oklch(0.995 0.005 80);
-  --popover-foreground: oklch(0.245 0.032 46);
-  --primary: oklch(0.585 0.135 38);
-  --primary-foreground: oklch(0.99 0.008 80);
-  --secondary: oklch(0.945 0.018 72);
-  --secondary-foreground: oklch(0.3 0.035 44);
-  --muted: oklch(0.945 0.018 72);
-  --muted-foreground: oklch(0.5 0.028 46);
-  --accent: oklch(0.585 0.135 38);
-  --accent-foreground: oklch(0.99 0.008 80);
-  --destructive: oklch(0.55 0.19 30);
-  --destructive-foreground: oklch(0.99 0.008 80);
-  --border: oklch(0.9 0.02 68);
-  --input: oklch(0.9 0.02 68);
-  --ring: oklch(0.585 0.135 38);
-  /* Tons de marca */
-  --wine: oklch(0.42 0.095 38);
-  --wine-deep: oklch(0.29 0.055 42);
-  --rose-burnt: oklch(0.585 0.135 38);
-  --terracotta: oklch(0.615 0.14 42);
-  --gold: oklch(0.775 0.06 68);
-  --ink: oklch(0.225 0.03 46);
-  --gradient-wine: linear-gradient(135deg, var(--wine-deep), var(--wine) 55%, var(--terracotta));
-  --gradient-gold: linear-gradient(90deg, transparent, var(--gold), transparent);
-  --shadow-soft: 0 22px 60px -30px oklch(0.29 0.055 42 / 0.28);
-  --shadow-cta: 0 16px 34px -14px oklch(0.585 0.135 38 / 0.5);
+  --radius: 0.75rem;
+  /* Fundo neutro: rosa muito claro / off-white */
+  --background: oklch(0.978 0.012 350);
+  --foreground: oklch(0.185 0.03 340);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.185 0.03 340);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.185 0.03 340);
+  --primary: oklch(0.63 0.27 344);
+  --primary-foreground: oklch(0.99 0.005 350);
+  --secondary: oklch(0.955 0.022 348);
+  --secondary-foreground: oklch(0.26 0.04 340);
+  --muted: oklch(0.955 0.022 348);
+  --muted-foreground: oklch(0.5 0.035 340);
+  --accent: oklch(0.63 0.27 344);
+  --accent-foreground: oklch(0.99 0.005 350);
+  --destructive: oklch(0.6 0.23 28);
+  --destructive-foreground: oklch(0.99 0.005 350);
+  --border: oklch(0.915 0.025 348);
+  --input: oklch(0.915 0.025 348);
+  --ring: oklch(0.63 0.27 344);
+
+  /* Marca */
+  --magenta: oklch(0.665 0.29 348); /* rosa-choque */
+  --magenta-deep: oklch(0.52 0.24 335); /* rosa-arroxeado */
+  --coral: oklch(0.625 0.24 26); /* vermelho */
+  --orange: oklch(0.73 0.19 48); /* laranja */
+  --wine: oklch(0.29 0.14 350); /* vinho/bordô */
+  --wine-deep: oklch(0.23 0.12 350);
+  --ink: oklch(0.155 0.015 340);
+  --blush: oklch(0.955 0.028 348);
+
+  --gradient-hero: linear-gradient(160deg, var(--magenta) 0%, oklch(0.6 0.27 344) 48%, var(--magenta-deep) 100%);
+  --gradient-price: linear-gradient(150deg, var(--coral) 0%, oklch(0.68 0.22 36) 55%, var(--orange) 100%);
+  --shadow-soft: 0 24px 60px -32px oklch(0.29 0.14 350 / 0.35);
+  --shadow-cta: 0 14px 30px -12px oklch(0.23 0.12 350 / 0.55);
 }
-
-
 
 @layer base {
   * {
@@ -97,91 +102,122 @@
 
   h1,
   h2,
-  h3,
-  blockquote {
+  h3 {
     font-family: var(--font-display);
-    font-variation-settings: "SOFT" 30, "WONK" 1;
-    letter-spacing: -0.02em;
-  }
-
-  p,
-  li {
-    letter-spacing: 0.004em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
   }
 }
 
-@utility surface-wine {
-  background: var(--gradient-wine);
-  color: oklch(0.985 0.005 85);
+/* Palavra em itálico serif dentro dos títulos */
+@utility accent-italic {
+  font-family: var(--font-serif-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
-@utility rule-gold {
-  height: 1px;
-  background: var(--gradient-gold);
+@utility surface-hero {
+  background: var(--gradient-hero);
+  color: oklch(0.995 0.003 350);
+}
+
+@utility surface-price {
+  background: var(--gradient-price);
+  color: oklch(0.995 0.003 350);
 }
 
 @utility eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
+/* Botão pílula vinho com ícone circular à esquerda */
 @utility cta-primary {
-  display: flex;
+  display: inline-flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--wine), var(--rose-burnt));
-  color: oklch(0.99 0.004 85);
-  padding: 1.05rem 1.5rem;
+  background: var(--wine);
+  color: oklch(0.99 0.004 350);
+  padding: 0.65rem 1.5rem 0.65rem 0.65rem;
   font-weight: 800;
   font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   box-shadow: var(--shadow-cta);
   transition:
     transform 0.2s ease,
     filter 0.2s ease;
   &:hover {
     transform: translateY(-2px);
-    filter: brightness(1.06);
+    filter: brightness(1.12);
   }
   &:active {
     transform: translateY(0);
   }
 }
 
-@utility cta-gold {
-  display: flex;
+@utility cta-light {
+  display: inline-flex;
   width: 100%;
   align-items: center;
   justify-content: center;
+  gap: 0.7rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, oklch(0.84 0.13 85), var(--gold));
+  background: oklch(1 0 0);
   color: var(--wine-deep);
-  padding: 1.05rem 1.5rem;
+  padding: 0.65rem 1.5rem 0.65rem 0.65rem;
   font-weight: 800;
   font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  box-shadow: 0 14px 34px -14px oklch(0.78 0.11 85 / 0.7);
+  box-shadow: 0 14px 30px -14px oklch(0.23 0.12 350 / 0.45);
   transition:
     transform 0.2s ease,
     filter 0.2s ease;
   &:hover {
     transform: translateY(-2px);
-    filter: brightness(1.05);
   }
 }
 
 @utility card-premium {
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   background: var(--color-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
+}
+
+@utility badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Carrosséis com scroll por toque */
+@utility rail {
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: 1.25rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & > * {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+  }
 }
 
 @keyframes rise {
@@ -217,6 +253,15 @@
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @utility animate-rise {
   animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -229,46 +274,6 @@
   animation: tick 0.35s ease-out;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @utility animate-marquee {
-  animation: marquee 34s linear infinite;
-  &:hover {
-    animation-play-state: paused;
-  }
-}
-
-@utility marquee-mask {
-  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-}
-
-
-
-@utility frame-collected {
-  border-radius: 1.25rem;
-  background: var(--color-card);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
-  outline: 1px solid oklch(0.9 0.02 68 / 0.6);
-  outline-offset: 6px;
-}
-
-@utility step-line {
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 2.1rem;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent);
-  }
+  animation: marquee 28s linear infinite;
 }

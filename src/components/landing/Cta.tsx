@@ -5,7 +5,7 @@ import { track } from "@/lib/tracking";
 type Props = {
   label: string;
   location: string;
-  variant?: "primary" | "gold";
+  variant?: "primary" | "light";
   className?: string;
 };
 
@@ -17,10 +17,17 @@ export function Cta({ label, location, variant = "primary", className = "" }: Pr
         track("CTA_Click", { location });
         track("Checkout_Click", { location, value: 7500, currency: "AOA" });
       }}
-      className={`${variant === "gold" ? "cta-gold" : "cta-primary"} ${className}`}
+      className={`${variant === "light" ? "cta-light" : "cta-primary"} ${className}`}
     >
+      <span
+        aria-hidden
+        className={`grid size-8 shrink-0 place-items-center rounded-full ${
+          variant === "light" ? "bg-wine text-primary-foreground" : "bg-magenta text-primary-foreground"
+        }`}
+      >
+        <ArrowRight className="size-4" />
+      </span>
       <span className="text-center">{label}</span>
-      <ArrowRight className="size-4 shrink-0" />
     </a>
   );
 }
@@ -29,7 +36,7 @@ export function TrustMicrocopy({ tone = "dark" }: { tone?: "dark" | "light" }) {
   return (
     <p
       className={`flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[0.72rem] ${
-        tone === "light" ? "text-background/70" : "text-muted-foreground"
+        tone === "light" ? "text-primary-foreground/80" : "text-muted-foreground"
       }`}
     >
       <Lock className="size-3" /> Pagamento seguro
