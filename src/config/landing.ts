@@ -26,7 +26,7 @@ export const CONFIG = {
   PRODUCT_NAME: "Silicone em Pó — Bunda grande em pouco tempo",
   PRODUCT_PRICE: "7.500 Kz",
   PRICE_BEFORE: "20.900 Kz",
-  CHECKOUT_URL: "#checkout", // <- substituir pelo link real do checkout
+  CHECKOUT_URL: "https://okandapay.com/checkout/silicone-em-po-bunda-grande-em-pouco-tempo-mtij7myq?pid=a78f4d55-216c-41b8-8771-ed2aa669e82d",
   VSL_URL: vslAsset.url,
   PRODUCT_MOCKUP: ebookMockup,
   /** Duração da condição especial por visitante (minutos). */
