@@ -26,6 +26,7 @@ import {
   FAQ,
   INCLUDED,
   STEPS,
+  PREPS,
   TESTIMONIALS,
 } from "@/config/landing";
 import { Cta, TrustMicrocopy } from "@/components/landing/Cta";
@@ -161,10 +162,10 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* 2 — BENTO GRID DE PROVA VISUAL */}
+      {/* 2 — BENTO GRID DE PREPAROS */}
       <div className="relative">
         <div className="grid grid-cols-2 sm:grid-cols-4">
-          {BEFORE_AFTER.map((img, i) => (
+          {PREPS.slice(0, 4).map((img, i) => (
             <img
               key={i}
               src={img.src}
@@ -176,6 +177,7 @@ function LandingPage() {
         </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
       </div>
+
 
       {/* 3 — POR QUE ESTÁ VIRALIZANDO */}
       <Section>
@@ -258,7 +260,7 @@ function LandingPage() {
       <section className="surface-price px-5 py-16 sm:py-24">
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="grid grid-cols-2 gap-4">
-            {BEFORE_AFTER.slice(0, 2).map((img, i) => (
+            {PREPS.slice(3, 5).map((img, i) => (
               <img
                 key={i}
                 src={img.src}
@@ -268,6 +270,7 @@ function LandingPage() {
               />
             ))}
           </div>
+
           <div>
             <p className="eyebrow opacity-85">Como funciona</p>
             <h2 className="mt-3 font-display text-[1.85rem] sm:text-[2.5rem]">
@@ -438,7 +441,7 @@ function LandingPage() {
           <div>
             <div className="flex items-center gap-3">
               <div className="flex">
-                {BEFORE_AFTER.slice(0, 4).map((t, i) => (
+                {BEFORE_AFTER.slice(4, 8).map((t, i) => (
                   <img
                     key={i}
                     src={t.src}

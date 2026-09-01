@@ -4,11 +4,21 @@ import ad1 from "@/assets/antes-depois-1.jpg.asset.json";
 import ad2 from "@/assets/antes-depois-2.jpg.asset.json";
 import ad3 from "@/assets/antes-depois-3.jpg.asset.json";
 import ad4 from "@/assets/antes-depois-4.jpg.asset.json";
+import ad5 from "@/assets/antes-depois-5.jpg.asset.json";
+import ad6 from "@/assets/antes-depois-6.jpg.asset.json";
+import ad7 from "@/assets/antes-depois-7.jpg.asset.json";
+import ad8 from "@/assets/antes-depois-8.jpg.asset.json";
+import prep1 from "@/assets/preparo-1.jpg.asset.json";
+import prep2 from "@/assets/preparo-2.jpg.asset.json";
+import prep3 from "@/assets/preparo-3.jpg.asset.json";
+import prep4 from "@/assets/preparo-4.jpg.asset.json";
+import prep5 from "@/assets/preparo-5.jpg.asset.json";
 import dep1 from "@/assets/depoimento-1.jpg.asset.json";
 import dep2 from "@/assets/depoimento-2.jpg.asset.json";
 import dep3 from "@/assets/depoimento-3.jpg.asset.json";
 import dep4 from "@/assets/depoimento-4.jpg.asset.json";
 import dep5 from "@/assets/depoimento-5.jpg.asset.json";
+
 
 /** Central config — edite tudo aqui. */
 export const CONFIG = {
@@ -46,7 +56,21 @@ export const BEFORE_AFTER = [
   { src: ad2.url, alt: "Resultado individual — antes e depois" },
   { src: ad3.url, alt: "Resultado individual — antes e depois" },
   { src: ad4.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: ad5.url, alt: "Resultado individual — antes e depois de uma cliente" },
+  { src: ad6.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: ad7.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: ad8.url, alt: "Resultado individual enviado por uma cliente" },
 ];
+
+/** Imagens de preparos/ingredientes do método. */
+export const PREPS = [
+  { src: prep1.url, alt: "Preparo em pó numa tigela de madeira" },
+  { src: prep2.url, alt: "Preparo em pó com colher de madeira e folhas" },
+  { src: prep3.url, alt: "Preparo em pó com sementes e ervas" },
+  { src: prep4.url, alt: "Preparo em pó de amendoim numa tigela" },
+  { src: prep5.url, alt: "Preparo em pó visto de cima numa tigela de madeira" },
+];
+
 
 export const TESTIMONIALS = [
   { src: dep1.url, name: "Cliente verificada", city: "Luanda" },
