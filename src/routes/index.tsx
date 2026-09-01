@@ -438,7 +438,7 @@ function LandingPage() {
           <div>
             <div className="flex items-center gap-3">
               <div className="flex">
-                {TESTIMONIALS.slice(0, 4).map((t, i) => (
+                {BEFORE_AFTER.slice(0, 4).map((t, i) => (
                   <img
                     key={i}
                     src={t.src}
