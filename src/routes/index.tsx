@@ -161,10 +161,10 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* 2 — BENTO GRID DE PROVA VISUAL */}
+      {/* 2 — BENTO GRID DE PREPAROS */}
       <div className="relative">
         <div className="grid grid-cols-2 sm:grid-cols-4">
-          {BEFORE_AFTER.map((img, i) => (
+          {PREPS.slice(0, 4).map((img, i) => (
             <img
               key={i}
               src={img.src}
@@ -176,6 +176,7 @@ function LandingPage() {
         </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
       </div>
+
 
       {/* 3 — POR QUE ESTÁ VIRALIZANDO */}
       <Section>
