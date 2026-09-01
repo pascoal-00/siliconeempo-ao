@@ -56,7 +56,21 @@ export const BEFORE_AFTER = [
   { src: ad2.url, alt: "Resultado individual — antes e depois" },
   { src: ad3.url, alt: "Resultado individual — antes e depois" },
   { src: ad4.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: ad5.url, alt: "Resultado individual — antes e depois de uma cliente" },
+  { src: ad6.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: ad7.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: ad8.url, alt: "Resultado individual enviado por uma cliente" },
 ];
+
+/** Imagens de preparos/ingredientes do método. */
+export const PREPS = [
+  { src: prep1.url, alt: "Preparo em pó numa tigela de madeira" },
+  { src: prep2.url, alt: "Preparo em pó com colher de madeira e folhas" },
+  { src: prep3.url, alt: "Preparo em pó com sementes e ervas" },
+  { src: prep4.url, alt: "Preparo em pó de amendoim numa tigela" },
+  { src: prep5.url, alt: "Preparo em pó visto de cima numa tigela de madeira" },
+];
+
 
 export const TESTIMONIALS = [
   { src: dep1.url, name: "Cliente verificada", city: "Luanda" },
