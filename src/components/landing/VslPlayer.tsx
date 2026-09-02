@@ -9,6 +9,7 @@ export function VslPlayer({ reel = false }: { reel?: boolean }) {
   const [playing, setPlaying] = useState(false);
   const marks = useRef({ 25: false, 50: false, 75: false });
   const trackedPlay = useRef(false);
+  const restarted = useRef(false);
 
   useEffect(() => {
     const v = ref.current;
@@ -33,10 +34,18 @@ export function VslPlayer({ reel = false }: { reel?: boolean }) {
   const toggleMute = () => {
     const v = ref.current;
     if (!v) return;
+    const willUnmute = v.muted;
     v.muted = !v.muted;
     setMuted(v.muted);
-    if (!v.muted && v.paused) {
-      v.play().then(() => setPlaying(true));
+    if (willUnmute && !restarted.current) {
+      // Primeira vez que o lead liga o som: recomeça o vídeo do início.
+      restarted.current = true;
+      marks.current = { 25: false, 50: false, 75: false };
+      v.currentTime = 0;
+    }
+    if (!v.muted) {
+      const p = v.play();
+      if (p !== undefined) p.then(() => setPlaying(true)).catch(() => {});
     }
   };
 
