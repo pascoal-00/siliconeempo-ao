@@ -1,4 +1,5 @@
 import ebookMockup from "@/assets/ebook-mockup.png";
+import { assetUrl } from "@/lib/asset-url";
 import vslAsset from "@/assets/vsl.mp4.asset.json";
 import ad1 from "@/assets/antes-depois-1.jpg.asset.json";
 import ad2 from "@/assets/antes-depois-2.jpg.asset.json";
@@ -27,7 +28,7 @@ export const CONFIG = {
   PRODUCT_PRICE: "7.500 Kz",
   PRICE_BEFORE: "20.900 Kz",
   CHECKOUT_URL: "https://okandapay.com/checkout/silicone-em-po-bunda-grande-em-pouco-tempo-mtij7myq?pid=a78f4d55-216c-41b8-8771-ed2aa669e82d",
-  VSL_URL: vslAsset.url,
+  VSL_URL: assetUrl(vslAsset.url),
   PRODUCT_MOCKUP: ebookMockup,
   /** Duração da condição especial por visitante (minutos). */
   OFFER_MINUTES: 29.79,
@@ -52,32 +53,32 @@ export const CTA = {
 };
 
 export const BEFORE_AFTER = [
-  { src: ad1.url, alt: "Resultado individual — antes e depois" },
-  { src: ad2.url, alt: "Resultado individual — antes e depois" },
-  { src: ad3.url, alt: "Resultado individual — antes e depois" },
-  { src: ad4.url, alt: "Resultado individual enviado por uma cliente" },
-  { src: ad5.url, alt: "Resultado individual — antes e depois de uma cliente" },
-  { src: ad6.url, alt: "Resultado individual enviado por uma cliente" },
-  { src: ad7.url, alt: "Resultado individual enviado por uma cliente" },
-  { src: ad8.url, alt: "Resultado individual enviado por uma cliente" },
+  { src: assetUrl(ad1.url), alt: "Resultado individual — antes e depois" },
+  { src: assetUrl(ad2.url), alt: "Resultado individual — antes e depois" },
+  { src: assetUrl(ad3.url), alt: "Resultado individual — antes e depois" },
+  { src: assetUrl(ad4.url), alt: "Resultado individual enviado por uma cliente" },
+  { src: assetUrl(ad5.url), alt: "Resultado individual — antes e depois de uma cliente" },
+  { src: assetUrl(ad6.url), alt: "Resultado individual enviado por uma cliente" },
+  { src: assetUrl(ad7.url), alt: "Resultado individual enviado por uma cliente" },
+  { src: assetUrl(ad8.url), alt: "Resultado individual enviado por uma cliente" },
 ];
 
 /** Imagens de preparos/ingredientes do método. */
 export const PREPS = [
-  { src: prep1.url, alt: "Preparo em pó numa tigela de madeira" },
-  { src: prep2.url, alt: "Preparo em pó com colher de madeira e folhas" },
-  { src: prep3.url, alt: "Preparo em pó com sementes e ervas" },
-  { src: prep4.url, alt: "Preparo em pó de amendoim numa tigela" },
-  { src: prep5.url, alt: "Preparo em pó visto de cima numa tigela de madeira" },
+  { src: assetUrl(prep1.url), alt: "Preparo em pó numa tigela de madeira" },
+  { src: assetUrl(prep2.url), alt: "Preparo em pó com colher de madeira e folhas" },
+  { src: assetUrl(prep3.url), alt: "Preparo em pó com sementes e ervas" },
+  { src: assetUrl(prep4.url), alt: "Preparo em pó de amendoim numa tigela" },
+  { src: assetUrl(prep5.url), alt: "Preparo em pó visto de cima numa tigela de madeira" },
 ];
 
 
 export const TESTIMONIALS = [
-  { src: dep1.url, name: "Cliente verificada", city: "Luanda" },
-  { src: dep2.url, name: "Cliente verificada", city: "Talatona" },
-  { src: dep3.url, name: "Cliente verificada", city: "Viana" },
-  { src: dep4.url, name: "Cliente verificada", city: "Benguela" },
-  { src: dep5.url, name: "Cliente verificado", city: "Luanda" },
+  { src: assetUrl(dep1.url), name: "Cliente verificada", city: "Luanda" },
+  { src: assetUrl(dep2.url), name: "Cliente verificada", city: "Talatona" },
+  { src: assetUrl(dep3.url), name: "Cliente verificada", city: "Viana" },
+  { src: assetUrl(dep4.url), name: "Cliente verificada", city: "Benguela" },
+  { src: assetUrl(dep5.url), name: "Cliente verificado", city: "Luanda" },
 ];
 
 export const INCLUDED = [
